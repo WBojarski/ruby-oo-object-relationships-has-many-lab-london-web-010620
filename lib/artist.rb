@@ -1,14 +1,10 @@
 class Artist
 
     attr_accessor :name, :songs
-
-    
-    @@songs = []
+    @songs = []
 
     def initialize(name)
         @name = name
-        
-
     end
 
     def songs 
@@ -16,16 +12,14 @@ class Artist
     end
 
     def add_song(song)
-        
         song.artist = self
-        @@songs << song
-        
+        @songs << song        
     end
 
     def add_song_by_name(name)
         song = Song.new(name)
         song.artist = self
-        @@songs << song
+        @songs << song
         
     end
 
